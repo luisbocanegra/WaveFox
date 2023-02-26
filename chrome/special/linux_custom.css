@@ -1,0 +1,28 @@
+/* always use transparent toolbar to also match transparent titlebar */
+@media (-moz-platform: linux)
+{
+    @supports -moz-bool-pref("userChrome.Linux.Transparency.Enabled.old")
+    {
+        #main-window:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+        {
+            background-color: color-mix(in srgb, var(--toolbar-field-background-color) 80%, transparent) !important;
+        }
+
+        :root:not([tabsintitlebar]):is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-color
+        {
+            appearance: none !important;
+        } 
+
+        /* opaque if maximzed */
+        #main-window:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):is(:root[sizemode="maximized"])
+        {
+            background-color: var(--toolbar-field-background-color) !important;
+        }
+
+        :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox-background
+        {
+            appearance: none !important;
+        }
+
+    }
+}
