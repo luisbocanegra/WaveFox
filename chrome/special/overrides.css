@@ -1,0 +1,52 @@
+/* some overrides */
+
+:root {
+    --c1: color-mix(in srgb, -moz-dialog 85%, AccentColor) !important;
+    --toolbar-bgcolor: color-mix(in srgb, var(--c1) 95%, white) !important;
+    --drag-space: 4px !important;
+    --searchbar-radius: 6px !important;
+    --searchbar-expanded-radius: 8px !important;
+    --urlbar-icon-border-radius: 4px !important;
+    --toolbarbutton-icon-fill-attention: AccentColorText !important;
+    --lwt-toolbar-field-icon-fill-attention: AccentColorText !important;
+    --button-primary-color: AccentColorText !important;
+}
+
+    #TabsToolbar :is(#tabs-newtab-button > .toolbarbutton-icon,
+    #new-tab-button > .toolbarbutton-icon,
+    #firefox-view-button > .toolbarbutton-icon,
+    #alltabs-button > .toolbarbutton-badge-stack,
+    .tab-close-button)
+    {
+        border-radius: var(--urlbar-icon-border-radius) !important;
+    }
+
+    /* Lightly like Searchbar https://github.com/Luwx/Lightly */
+
+    #urlbar-background, #searchbar, #urlbar-input-container {
+        border: 2px solid transparent !important;
+        border-radius: var(--searchbar-radius) !important; 
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, .09) !important;
+    }
+
+    #urlbar:is([focused="true"]:not([open])) > #urlbar-input-container {
+        border: 2px solid AccentColorText !important;
+    }
+
+    #urlbar:is([open]) > #urlbar-background {
+        border-radius: var(--searchbar-expanded-radius) !important;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .1) !important;
+    }
+
+    :root:not(:-moz-lwtheme) .urlbar-addon-page-action[style*=".svg"] > .urlbar-icon {
+        filter: opacity(0.65) grayscale(100%) brightness(1%) invert() !important;
+    }
+
+    .urlbar-page-action, #urlbar-go-button, .search-go-button {
+        width: calc(var(--urlbar-min-height) - 4px - 2 * var(--urlbar-container-padding)) !important;
+        height: calc(var(--urlbar-min-height) - 4px - 2 * var(--urlbar-container-padding)) !important;
+        border-radius: var(--urlbar-icon-border-radius);
+        padding: 5px !important;;
+    }
+
+

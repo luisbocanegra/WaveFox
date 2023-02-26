@@ -2,6 +2,7 @@
 @import "special/windows_8_7.css";
 @import "special/linux_custom.css";
 @import "special/linux.css";
+@import "special/overrides.css";
 @import "special/mac.css";
 
 @media (-moz-platform: windows),
@@ -1393,7 +1394,7 @@ spacer[part="overflow-end-indicator"]
 
 /* ---------------------------------------- Rounded Elements ---------------------------------------- */
 
-@supports -moz-bool-pref("userChrome.WaveFoxTabs-Enabled")   or
+/* @supports -moz-bool-pref("userChrome.WaveFoxTabs-Enabled")   or
           -moz-bool-pref("userChrome.AustralisTabs-Enabled") or
           -moz-bool-pref("userChrome.ChromeTabs-Enabled")
 {
@@ -1415,7 +1416,7 @@ spacer[part="overflow-end-indicator"]
     {
         border-radius: 50px !important;
     }
-}
+} */
 
 /* ---------------------------------------- One Line ---------------------------------------- */
 
